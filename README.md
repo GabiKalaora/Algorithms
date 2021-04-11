@@ -1,2 +1,2 @@
 # Algorithms
-diffrent basic algorithms, such as sorting algorithms etc.
+different basic algorithms, such as sorting algorithms etc.
