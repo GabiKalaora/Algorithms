@@ -1,2 +1,2 @@
 # Algorithms
-added some text to this file (README.md)
+diffrent basic algorithms, such as sorting algorithms etc.
