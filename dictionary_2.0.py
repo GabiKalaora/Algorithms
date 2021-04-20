@@ -23,7 +23,7 @@ class Dictionary:
 
     def delete(self, word):
         node = self.base
-        for i, letter in enumerate(word):
+        for letter in word:
             if letter in node.children:
                 node = node.children[letter]
         node.end_word = False
