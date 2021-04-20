@@ -24,7 +24,8 @@ class Dictionary:
     def delete(self, word):
         node = self.base
         for i, letter in enumerate(word):
-            node = node.children[letter]
+            if letter in node.children:
+                node = node.children[letter]
         node.end_word = False
 
     def __print_all_helper(self, node):
@@ -62,8 +63,11 @@ d.insert('absolutely')
 d.insert('python')
 d.insert('payment')
 d.insert('paypal')
+d.insert('payment')
 d.print_all()
 print(d.prefix('ap'))
 d.delete('applebee')
+d.delete('paypal')
 print(d.prefix('ap'))
+print(d.prefix(''))
 d.print_all()
