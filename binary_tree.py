@@ -78,12 +78,12 @@ class BST:
                 return cur
 
     def successor(self, node):
-        # first case: node has right child
+        # first case: node has right child so successor is most left child in this right subtree
         if node.right:
             return self.get_min(node.right)
 
-        # second case: node right child == None
-        succ = Node(None)
+        # second case: if no right child successor is ancestor that has a left child that is also ancestor of node
+        succ = None
         cur = self.root
         while cur:
             if cur.data > node.data:
@@ -108,6 +108,7 @@ class BST:
         elif data > node.data:
             node.right = self.__delete(node.right, data)
 
+        # we holding node to delete
         else:
             if node.left is None:
                 node = node.right
@@ -116,6 +117,7 @@ class BST:
             else:
                 node = self.successor(node)
                 node.right = self.__delete(node.right, node.data)
+            self.__len -= 1
         return node
 
 
@@ -129,7 +131,7 @@ bst.insert(11)
 bst.insert(15)
 bst.insert(14)
 print(bst)
-for j in range(len(bst)):
-    print(j)
+print('len ->', len(bst))
 bst.delete(8)
 print(bst)
+print('len ->', len(bst))
