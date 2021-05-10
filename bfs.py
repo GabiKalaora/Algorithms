@@ -1,6 +1,6 @@
 class Graph:
     def __init__(self):
-        self.graph = {}
+        self.graph = dict()
 
     def print_graph(self):
         for i in self.graph:
