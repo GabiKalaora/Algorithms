@@ -70,6 +70,10 @@ class BST:
         return False
 
     def get_min(self, node):
+        # if node.left:
+        #     return self.get_min(node.left)
+        # else:
+        #     return node
         cur = node
         while cur:
             if cur.left:
@@ -135,3 +139,4 @@ print('len ->', len(bst))
 bst.delete(8)
 print(bst)
 print('len ->', len(bst))
+print(bst.get_min(bst.root).data)
