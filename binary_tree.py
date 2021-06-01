@@ -119,8 +119,8 @@ class BST:
             elif node.right is None:
                 node = node.left
             else:
-                node = self.successor(node)
-                node.right = self.__delete(node.right, node.data)
+                succ = self.successor(node)
+                succ.right = self.__delete(succ.right, succ.data)
             self.__len -= 1
         return node
 
